@@ -1,0 +1,9 @@
+{
+	"trailingComma": "es5",
+	"singleQuote": true,
+	"semi": false,
+	"useTabs": true,
+	"printWidth": 80,
+	"importOrderSeparation": true,
+	"importOrderSortSpecifiers": true
+}

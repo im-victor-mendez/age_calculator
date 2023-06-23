@@ -1,0 +1,71 @@
+@import './sass/colors';
+@import './sass/fonts';
+
+$fill: -webkit-fill-available;
+
+#calculator {
+	background-color: $white;
+	border-radius: 2rem;
+	border-bottom-right-radius: 6rem;
+	padding: 2rem 1rem;
+	font-family: 'Poppins';
+
+	#inputs {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 2rem;
+
+		.labels {
+			display: flex;
+			justify-content: space-between;
+			width: $fill;
+
+			.label {
+				width: 30%;
+
+				input {
+					width: $fill;
+					height: 2rem;
+					padding: 0.5rem;
+					border: 1px solid $smoke-grey;
+					border-radius: 0.5rem;
+					font-weight: 900;
+					font-size: 1.5rem;
+				}
+			}
+		}
+
+		.button {
+			background-color: $purple;
+			border-radius: 100%;
+			border: 1px solid transparent;
+			width: fit-content;
+			padding: 0.5rem;
+			z-index: 1;
+		}
+	}
+
+	.divider {
+		background-color: $light-grey;
+		height: 1px;
+		width: $fill;
+		position: relative;
+		bottom: 2rem;
+		z-index: 0;
+	}
+
+	#results {
+		font-size: 4rem;
+		font-weight: bold;
+		font-style: italic;
+
+		* {
+			margin: 0;
+		}
+
+		.important {
+			color: $purple;
+		}
+	}
+}

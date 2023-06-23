@@ -1,0 +1,35 @@
+$font-path: '@/assets/fonts' !default;
+
+@font-face {
+	font-family: 'Poppins';
+	font-weight: bold;
+	src: url('#{$font-path}/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-weight: bold;
+	src: url('#{$font-path}/Poppins-BoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-weight: bolder;
+	src: url('#{$font-path}/Poppins-ExtraBold.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('#{$font-path}/Poppins-ExtraBoldItalic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	src: url('#{$font-path}/Poppins-Italic.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Poppins';
+	font-weight: normal;
+	src: url('#{$font-path}/Poppins-Regular.ttf') format('truetype');
+}

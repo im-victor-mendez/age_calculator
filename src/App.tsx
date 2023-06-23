@@ -1,3 +1,4 @@
+import './App.scss'
 import { ReactComponent as ArrowIcon } from '@/assets/svg/icon-arrow.svg'
 import { useState } from 'react'
 
@@ -26,7 +27,7 @@ function App() {
 		if (!date) return setError(true)
 		if (Object.values(date).some(valueIsUndefined)) return setError(true)
 
-		const inputDate = new Date(date.year, date.month, date.day)
+		const inputDate = new Date(date.year, date.month - 1, date.day)
 		const currentDate = new Date()
 		const difference = currentDate.getTime() - inputDate.getTime()
 
@@ -48,38 +49,59 @@ function App() {
 		<>
 			<main id="calculator" className="card">
 				<form id="inputs" onSubmit={calculate}>
-					<label className="label">
-						Day{' '}
-						<input
-							className="input"
-							type="number"
-							name="day"
-							id="day"
-							onChange={handleInput}
-						/>
-					</label>
-					<label className="label">
-						Month{' '}
-						<input
-							type="number"
-							name="month"
-							id="month"
-							onChange={handleInput}
-						/>
-					</label>
-					<label className="label">
-						Year{' '}
-						<input type="number" name="year" id="year" onChange={handleInput} />
-					</label>
+					<section className="labels">
+						<label className="label">
+							Day{' '}
+							<input
+								className="input"
+								type="number"
+								name="day"
+								id="day"
+								min={1}
+								max={date?.month == 2 ? 28 : 31}
+								onChange={handleInput}
+							/>
+						</label>
+						<label className="label">
+							Month{' '}
+							<input
+								type="number"
+								name="month"
+								id="month"
+								min={1}
+								max={12}
+								onChange={handleInput}
+							/>
+						</label>
+						<label className="label">
+							Year{' '}
+							<input
+								type="number"
+								name="year"
+								id="year"
+								min={100}
+								onChange={handleInput}
+							/>
+						</label>
+					</section>
 					<button type="submit" className="button">
 						<ArrowIcon />
 					</button>
 				</form>
 				<div className="divider"></div>
 				<article id="results">
-					<p>{calculatedDate?.year} years</p>
-					<p>{calculatedDate?.month} months</p>
-					<p>{calculatedDate?.day} days</p>
+					<p>
+						<span className="important">{calculatedDate?.year ?? '--'}</span>{' '}
+						years
+					</p>
+					<p>
+						<span className="important">{calculatedDate?.month ?? '--'}</span>{' '}
+						months
+					</p>
+					<p>
+						<span className="important">{calculatedDate?.day ?? '--'}</span>{' '}
+						days
+					</p>
 				</article>
 			</main>
 		</>

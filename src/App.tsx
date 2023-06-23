@@ -11,7 +11,7 @@ type ObjectDate = {
 function App() {
 	const [date, setDate] = useState<ObjectDate>()
 	const [calculatedDate, setCalculatedDate] = useState<ObjectDate>()
-	const [error, setError] = useState(false)
+	const [, setError] = useState(false)
 
 	function handleInput(event: { target: { value: string; name: string } }) {
 		const value = event.target.value
